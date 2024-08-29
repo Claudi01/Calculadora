@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-// Funções para as conversões
+// Funcoes para as conversoes
 
 void decimalToBinary(int n) {
     printf("Base 2: ");
@@ -25,7 +25,7 @@ void decimalToHexadecimal(int n) {
 }
 
 void decimalToBCD(int n) {
-    printf("Código BCD: ");
+    printf("Codigo BCD: ");
     for (int i = 28; i >= 0; i -= 4) {
         int digit = (n >> i) & 0xF;
         printf("%d ", digit);
@@ -74,7 +74,7 @@ void floatToBinary(float f) {
     uint32_t mantissa = data.output & 0x7FFFFF;
 
     printf("Float - Sinal: %u, Expoente: %u, Mantissa: %u\n", sign, exponent, mantissa);
-    printf("Float - Binário: ");
+    printf("Float - Binario: ");
     printBinary(data.output, 32);
 }
 
@@ -91,11 +91,11 @@ void doubleToBinary(double d) {
     uint64_t mantissa = data.output & 0xFFFFFFFFFFFFF;
 
     printf("Double - Sinal: %lu, Expoente: %lu, Mantissa: %lu\n", sign, exponent, mantissa);
-    printf("Double - Binário: ");
+    printf("Double - Binario: ");
     printBinary(data.output, 64);
 }
 
-// Função principal com menu
+// Funcao principal com menu
 
 int main() {
     int choice, num;
@@ -103,51 +103,51 @@ int main() {
     double d;
 
     do {
-        printf("\nCalculadora Programador Didática\n");
+        printf("\nCalculadora Programador Didatica\n");
         printf("1. Base 10 para Base 2\n");
         printf("2. Base 10 para Base 8\n");
         printf("3. Base 10 para Base 16\n");
-        printf("4. Base 10 para Código BCD\n");
+        printf("4. Base 10 para Codigo BCD\n");
         printf("5. Base 10 para Complemento a 2 (16 bits)\n");
         printf("6. Converter Real para Float\n");
         printf("7. Converter Real para Double\n");
         printf("8. Sair\n");
-        printf("Escolha uma opção: ");
+        printf("Escolha uma opcao: ");
         scanf("%d", &choice);
 
         switch (choice) {
             case 1:
-                printf("Digite um número em base 10: ");
+                printf("Digite um numero em base 10: ");
                 scanf("%d", &num);
                 decimalToBinary(num);
                 break;
             case 2:
-                printf("Digite um número em base 10: ");
+                printf("Digite um numero em base 10: ");
                 scanf("%d", &num);
                 decimalToOctal(num);
                 break;
             case 3:
-                printf("Digite um número em base 10: ");
+                printf("Digite um numero em base 10: ");
                 scanf("%d", &num);
                 decimalToHexadecimal(num);
                 break;
             case 4:
-                printf("Digite um número em base 10: ");
+                printf("Digite um numero em base 10: ");
                 scanf("%d", &num);
                 decimalToBCD(num);
                 break;
             case 5:
-                printf("Digite um número em base 10: ");
+                printf("Digite um numero em base 10: ");
                 scanf("%d", &num);
                 decimalToTwosComplement(num);
                 break;
             case 6:
-                printf("Digite um número real (float): ");
+                printf("Digite um numero real (float): ");
                 scanf("%f", &f);
                 floatToBinary(f);
                 break;
             case 7:
-                printf("Digite um número real (double): ");
+                printf("Digite um numero real (double): ");
                 scanf("%lf", &d);
                 doubleToBinary(d);
                 break;
@@ -155,7 +155,7 @@ int main() {
                 printf("Saindo...\n");
                 break;
             default:
-                printf("Opção inválida!\n");
+                printf("Opcao invalida!\n");
         }
 
     } while (choice != 8);
